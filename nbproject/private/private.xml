@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/tutus/Documents/NetBeansProjects/taquitos/src/java/user/LoginUser.java</file>
             <file>file:/C:/Users/tutus/Documents/NetBeansProjects/taquitos/src/java/user/UserActions.java</file>
+=======
+            <file>file:/C:/Users/PorfirioDamián/Desktop/CarritoTM/carritof/src/java/user/LoginUser.java</file>
+            <file>file:/C:/Users/PorfirioDamián/Desktop/CarritoTM/carritof/src/java/user/UserActions.java</file>
+            <file>file:/C:/Users/PorfirioDamián/Desktop/CarritoTM/carritof/src/java/user/LogoutUser.java</file>
+            <file>file:/C:/Users/PorfirioDamián/Desktop/CarritoTM/carritof/src/java/user/UserRegister.java</file>
+>>>>>>> f48b8d08129d4325feec6df99e1449e73045651a
         </group>
     </open-files>
 </project-private>
