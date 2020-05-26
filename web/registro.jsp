@@ -39,39 +39,31 @@
                         </tr>
                         <tr>
                             <td>Apellido Paterno:</td>
-                            <td><input type='text' name='apellidop' class='text' placeholder='Apellido paterno'></td>
+                            <td><input type='text' name='paterno' class='text' placeholder='Apellido paterno'></td>
                         </tr>
                         <tr>
                             <td>Apellido Materno:</td>
-                            <td><input type='text' name='apellidom' class='text' placeholder='Apellido materno'></td>
+                            <td><input type='text' name='materno' class='text' placeholder='Apellido materno'></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type='text' name='email' class='text' placeholder='Correo electronico'></td>
+                            <td><input type='text' name='correo' class='text' placeholder='Correo electronico'></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input type='text' name='password' class='text' placeholder='Contraseña'></td>
+                            <td><input type='text' name='contrasena' class='text' placeholder='Contraseña'></td>
                         </tr>
                         <tr>
-                            <td>CURP:</td>
-                            <td><input type='text' name='curp' class='text' placeholder='CURP'></td>
-                        </tr>
-                        <tr>
-                            <td>Nacimiento:</td>
-                            <td><input type='text' name='nacimiento' class='text' placeholder='Fecha de nacimiento'></td>
-                        </tr>
-                        <tr>
-                            <td>Direccion</td>
-                            <td><input type='text' name='direccion' class='text' placeholder='Direccion'></td>
-                        </tr>
-                        <tr>
-                            <td>CP:</td>
-                            <td><input type='text' name='cp' class='text' placeholder='Codigo Postal'></td>
+                            <td>Fecha de nacimiento:</td>
+                            <td><input type='date' name='cumpleanos' class='text' placeholder='CURP'></td>
                         </tr>
                         <tr>
                             <td>Telefono:</td>
-                            <td><input type='text' name='telefono' class='text' placeholder='Telefono de contacto'></td>
+                            <td><input type='text' name='telefono' class='text' placeholder='Fecha de nacimiento'></td>
+                        </tr>
+                        <tr>
+                            <td>Celular:</td>
+                            <td><input type='text' name='celular' class='text' placeholder='Direccion'></td>
                         </tr>
                         <tr>
                             <td></td>
