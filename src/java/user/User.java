@@ -1,10 +1,12 @@
+package user;
 
-package User;
+
+
 
 public class User {
     
-    private int cp,no_int,no_ext;
-    private String nom_mu, appat_mu, apmat_mu, birth_mu, tel_mu, cel_mu, email_mu, pass_mu, ciudad, colonia,  calle;
+    
+    private String nom_mu, appat_mu, apmat_mu, birth_mu, tel_mu, cel_mu, email_mu, pass_mu;
 
     public int getCp() {
         return cp;

@@ -22,7 +22,7 @@
                 <nav class="navegacion" id="navegacion">
                     <ul>
                         <li><a href="">Logo</a></li>
-                        <li><a href="">Registrarse</a></li>
+                        <li><a href="registro.jsp">Registrarse</a></li>
                     </ul>
                 </nav>
         </section> 

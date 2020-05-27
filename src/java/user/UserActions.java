@@ -1,29 +1,26 @@
-package User;
+package user;
+
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.*;
+import java.util.Arrays;
 
 public class UserActions {
     public static Connection getConnection(){
-        String url, userName, password;
         
-        url="jdbc:mysql:3306/localhost/TacoMaster_DB";
-        userName="root";
-        password="root";
+        String url="jdbc:mysql://localhost:3306/TacoMaster_DB?user=root&password=root";
         
         Connection con = null;
         
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url, userName, 
-                    password);
-            System.out.println("Se conecto a la BD");
-        }catch(ClassNotFoundException | SQLException e){
-            System.out.println("No se conecto a la BD");
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            con = DriverManager.getConnection(url);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
+            System.out.println(Arrays.toString(e.getStackTrace()));
         }
         return con;
     }
@@ -147,8 +144,6 @@ public class UserActions {
         return status;
     }
     
-    
-    //crear guardardireccion ciudad, colonia,calle,cp,no_int,no_ext
     public static int GuardarDireccion(User e){
         int status = 0;
         try{
@@ -165,9 +160,9 @@ public class UserActions {
             ps.setString(1, e.getCiudad());
             ps.setString(2, e.getColonia());
             ps.setString(3, e.getCalle());
-            ps.setString(4, (e.getCp()));
-            ps.setString(5, (e.getNo_int()));
-            ps.setString(6, (e.getNo_ext()));
+            ps.setInt(4, e.getCp());
+            ps.setInt(5, e.getNo_int());
+            ps.setInt(6, e.getNo_ext());
             ps.setString(7, e.getEmail_mu());
             
             status = ps.executeUpdate();
@@ -180,16 +175,11 @@ public class UserActions {
         return status;
     }
     
-    public static int ActualizarDireccion(User e){
+    public static int EliminarDireccion(User e){
         int status = 0;
         try{
             Connection con = UserActions.getConnection();
-            String sql= "update MDireccionEntrega set ciudad = ?, "
-                    + "colonia = ?, "
-                    + "calle = ?, "
-                    + "cp = ?, "
-                    + "no_int = ?, "
-                    + "no_ext = ?, "
+            String sql= "delete from MDireccionEntrega"
                     + "where email_mu = ?";
             
             PreparedStatement ps = con.prepareStatement(sql);

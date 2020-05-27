@@ -1,5 +1,7 @@
+package user;
 
-package User;
+
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,8 +16,7 @@ public class UserRegister extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
          try (PrintWriter out = response.getWriter()) {
-        String nombre, paterno, materno, cumpleanos, telefono, celular, correo, contrasena, ciudad, colonia, calle;
-        int cp, interior, exterior;
+        String nombre, paterno, materno, cumpleanos, telefono, celular, correo, contrasena;
             nombre = request.getParameter("nombre");
             paterno = request.getParameter("paterno");
             materno = request.getParameter("materno");
@@ -38,10 +39,11 @@ public class UserRegister extends HttpServlet {
             
             if(estado >0){
                 out.println("<h1>Wiiiii se guardo *w*</h1>");
-                request.getRequestDispatcher("index.html");
+                request.getRequestDispatcher("index.jsp");
             }else{
                 out.println("<h1>Solo juguito contigo :P"
                         + "Caldito seas wiiiiii</h1>");
+                System.out.println("no puede ser");
             }
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -49,7 +51,7 @@ public class UserRegister extends HttpServlet {
             out.println("<title>Servlet GuardarEmpleado</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet GuardarEmpleado at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet GuardarEmpleado at </h1>");
             out.println("</body>");
             out.println("</html>");
         }
