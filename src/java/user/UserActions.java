@@ -55,7 +55,8 @@ public class UserActions {
         try{
             
             Connection con = UserActions.getConnection();
-            
+                        /*INSERT INTO musuario (nivel_mu, nom_mu, appat_mu, apmat_mu,birth_mu,email_mu, pass_mu, tel_mu, cel_mu) VALUES(2,'Pablo','Troncoso','Garcia','2000-05-11','esteemail@alo.com','1234',null,'5580958476');
+            SELECT * FROM tacomaster_db.musuario;*/
             String q = "insert into musuario (nom_mu, appat_mu, apmat_mu, birth_mu, tel_mu, cel_mu, email_mu, pass_mu, ) values (?, ?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement ps = con.prepareStatement(q);
@@ -144,28 +145,45 @@ public class UserActions {
         return status;
     }
     
-    public static int GuardarDireccion(User e){
+    //------------------------------------------------------------------------------------------------------------------------
+    public static int GuardarDireccion(Direccion ex, User e){
         int status = 0;
         try{
             Connection con = UserActions.getConnection();
+            Statement st = con.createStatement(),st2 = con.createStatement();
+            ResultSet rs, rs2;
+            int id_usuario = 0,id_direccion;
+                        
             String sql= "insert into MDireccionEntrega set ciudad = ?, "
                     + "colonia = ?, "
                     + "calle = ?, "
                     + "cp = ?, "
                     + "no_int = ?, "
-                    + "no_ext = ? "
-                    + "where email_mu = ?";
+                    + "no_ext = ? ";
             
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, e.getCiudad());
-            ps.setString(2, e.getColonia());
-            ps.setString(3, e.getCalle());
-            ps.setInt(4, e.getCp());
-            ps.setInt(5, e.getNo_int());
-            ps.setInt(6, e.getNo_ext());
+            ps.setString(1, ex.getCiudad());
+            ps.setString(2, ex.getColonia());
+            ps.setString(3, ex.getCalle());
+            ps.setInt(4, ex.getCp());
+            ps.setInt(5, ex.getNo_int());
+            ps.setInt(6, ex.getNo_ext());
             ps.setString(7, e.getEmail_mu());
             
             status = ps.executeUpdate();
+
+
+            String sql2 ="select id_mu from musuario where email_mu like '"+e.getEmail_mu()+"'";
+            rs = st.executeQuery(sql2);
+            id_usuario = rs.getInt("id_mu");
+            
+            String sql3 ="select id_mu from MDireccionEntrega where colonia like '"+ex.getColonia()+"'";
+            rs = st.executeQuery(sql3);
+            id_direccion = rs.getInt("id_mde");
+            
+            String sql4 = "insert into edireccioncliente (id_mde,id_mu) values ("+id_direccion+","+id_usuario+")";
+            st.executeQuery(sql4);
+
             con.close();
         }catch(SQLException ed){
             System.out.println("No conecto a la tabla");
@@ -174,6 +192,7 @@ public class UserActions {
         }
         return status;
     }
+    //------------------------------------------------------------------------------------------------------------------------
     
     public static int EliminarDireccion(User e){
         int status = 0;

@@ -8,14 +8,6 @@ public class User {
     
     private String nom_mu, appat_mu, apmat_mu, birth_mu, tel_mu, cel_mu, email_mu, pass_mu;
 
-    public int getCp() {
-        return cp;
-    }
-
-    public void setCp(int cp) {
-        this.cp = cp;
-    }
-
     public String getNom_mu() {
         return nom_mu;
     }
@@ -62,46 +54,6 @@ public class User {
 
     public void setCel_mu(String cel_mu) {
         this.cel_mu = cel_mu;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getColonia() {
-        return colonia;
-    }
-
-    public void setColonia(String colonia) {
-        this.colonia = colonia;
-    }
-
-    public String getCalle() {
-        return calle;
-    }
-
-    public void setCalle(String calle) {
-        this.calle = calle;
-    }
-
-    public int getNo_int() {
-        return no_int;
-    }
-
-    public void setNo_int(int no_int) {
-        this.no_int = no_int;
-    }
-
-    public int getNo_ext() {
-        return no_ext;
-    }
-
-    public void setNo_ext(int no_ext) {
-        this.no_ext = no_ext;
     }
 
     public String getEmail_mu() {
