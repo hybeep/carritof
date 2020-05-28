@@ -94,13 +94,12 @@ public class UserActions {
         return status;
     }
     
-    public static int EliminarCuenta(int id){
+    public static int EliminarCuenta(String email){
         int status = 0;
         try{
             Connection con = UserActions.getConnection();
-            String q ="delete from musuario where id =?";
+            String q ="delete from musuario where email_mu ='"+email+"'";
             PreparedStatement ps = con.prepareStatement(q);
-            ps.setInt(1, id);
             status = ps.executeUpdate();
             con.close();
         
@@ -151,8 +150,8 @@ public class UserActions {
             System.out.println("No conecto a la tabla");
             System.out.println(ed.getMessage());
             System.out.println(ed.getStackTrace());
-        
         }
+        System.out.println("status en actualizar password" + status);
         return status;
     }
     
@@ -160,21 +159,21 @@ public class UserActions {
         int id = 0;
         try{
             Connection con = UserActions.getConnection();
-            String sql= "select id where email_mu=?";
+            String sql= "select * from musuario where email_mu='"+email+"'";
             
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, email);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if(rs.next()){
+                id = rs.getInt(1);
+             }
             
-            ResultSet rs = null;
-            id = ps.executeUpdate();
-            rs = ps.executeQuery(sql);
-           
+            rs.close();
+            st.close();
             con.close();
         }catch(SQLException ed){
             System.out.println("No conecto a la tabla");
             System.out.println(ed.getMessage());
             System.out.println(ed.getStackTrace());
-        
         }
         return id;
     }

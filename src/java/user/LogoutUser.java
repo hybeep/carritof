@@ -32,6 +32,9 @@ public class LogoutUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
+            session.invalidate();
+            response.sendRedirect("index.jsp");  
         }
     }
 
@@ -64,9 +67,7 @@ public class LogoutUser extends HttpServlet {
         processRequest(request, response);
         try (PrintWriter out = response.getWriter()) {
             
-            HttpSession session = request.getSession();
-            session.invalidate();
-            response.sendRedirect("index.jsp");  
+            
         }
     }
 

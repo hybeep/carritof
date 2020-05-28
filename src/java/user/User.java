@@ -8,7 +8,7 @@ import java.sql.Date;
 public class User {
     
     
-    private String nom_mu, appat_mu, apmat_mu, tel_mu, cel_mu, email_mu, pass_mu;
+    private String nom_mu, appat_mu, apmat_mu, tel_mu, cel_mu, email_mu, pass_mu,id;
     private Date birth_mu;
 
     public String getNom_mu() {
@@ -75,5 +75,13 @@ public class User {
 
     public void setBirth_mu(Date birth_mu) {
         this.birth_mu = birth_mu;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

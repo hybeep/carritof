@@ -63,6 +63,28 @@ public class DireccionActions {
         }
         return status;
     }
+    
+    public static int LeerDireccion(User e){
+        int status = 0;
+        try{
+            Connection con = UserActions.getConnection();
+            String sql= "delete from MDireccionEntrega"
+                    + "where email_mu = ? and";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, e.getNom_mu());
+            ps.setString(2, e.getPass_mu());
+            ps.setString(3, e.getEmail_mu());
+            
+            status = ps.executeUpdate();
+            con.close();
+        }catch(SQLException ed){
+            System.out.println("No conecto a la tabla");
+            System.out.println(ed.getMessage());
+            System.out.println(ed.getStackTrace());
+        }
+        return status;
+    }
    
     public static int EliminarDireccion(User e){
         int status = 0;

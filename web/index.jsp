@@ -35,7 +35,7 @@
             <label for="" class="log_in">
                 <img class="logo" src="IMG/logo_e.jpg">
                 <h1>Iniciar Sesion</h1>
-                <form action="index.jsp" method="post">
+                <form action="index.jsp">
                     <!---Usuario--->
                     <label class="titulos" for="email">Correo</label>
                     <input type="text" name="correo" placeholder="Ingresa el Correo">
@@ -63,9 +63,9 @@
                                 int id = UserActions.getIdByEmail(email); 
                                 session.setAttribute("id",id);
                                 session.setAttribute("email", email);
+                                System.out.println("datos sesion login"+session.getAttribute("email")+" "+session.getAttribute("id"));
                                 response.sendRedirect("main.jsp");
                             }else{
-                                out.println("<h1>Es probable que no este registrado</h1>");
                             }
                     %>
                     

@@ -1,18 +1,16 @@
 <%-- 
-    Document   : main.jsp
-    Created on : 26/05/2020, 12:35:05 AM
-    Author     : PorfirioDamián
+    Document   : profile
+    Created on : 28/05/2020, 12:21:26 AM
+    Author     : tutus
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link rel="stylesheet" href="css/master.css">
-        <script></script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
     </head>
     <body>
         <% if(session.getAttribute("email") != null){ 
@@ -34,15 +32,24 @@
                 </nav>
                 <section class="cuerpo" id="cuerpo">
                     <aside class="lateral_izquierdo" id="lateral_izquierdo">
-                        <h4>La historia de los tacos</h4>
-                        <p>Los tacos saben bien rico UwU</p>
+                        <ul>
+                            <p>Perfil</p>
+                            <li><a href="profile.jsp">Mi Perfil</a></li>
+                            <li><a href="direcciones.jsp">Direcciones Guardadas</a></li>
+                            <li><a href="historial.jsp">Historial de Compras</a></li>
+                    </ul>
                     </aside>
                     <section class="productos" id="productos">
-                        <h1>Taco Master</h1>
+                        <h1>Informacion Personal</h1>
+                        <form action="deleteuser.jsp" method="post">
+                            <input type="submit" value="Eliminar tu cuenta">
+                        </form>
+                        <form action="actualizarpasswordprocess.jsp" method="post">
+                            <input type="password" name='pass_a' placeholder="Escribe tu Contraseña">
+                            <input type="password" name='pass_n' placeholder="Tu Nueva Contraseña">
+                            <input type="submit" value="Modificar tu Contraseña">
+                        </form>
                     </section>
-                    <aside class="lateral_derecho" id="lateral_derecho">
-                        <h4>Aqui no se que poner</h4>
-                    </aside>
                 </section>
                 <footer class="pie_de_pagina" id="pie_de_pagina">
                     <h4>Contactanos en</h4>

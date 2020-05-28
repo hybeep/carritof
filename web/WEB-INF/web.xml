@@ -12,6 +12,14 @@
         <servlet-name>UserRegister</servlet-name>
         <servlet-class>user.UserRegister</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>user.DeleteUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarPassword</servlet-name>
+        <servlet-class>user.ActualizarPassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginUser</servlet-name>
         <url-pattern>/LoginUser</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>UserRegister</servlet-name>
         <url-pattern>/UserRegister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/DeleteUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarPassword</servlet-name>
+        <url-pattern>/ActualizarPassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
