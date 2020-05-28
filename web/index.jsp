@@ -4,6 +4,8 @@
     Author     : PorfirioDamián
 --%>
 
+<%@page import="user.User"%>
+<%@page import="user.UserActions"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,18 +35,42 @@
             <label for="" class="log_in">
                 <img class="logo" src="IMG/logo_e.jpg">
                 <h1>Iniciar Sesion</h1>
-                <form>
+                <form action="index.jsp" method="post">
                     <!---Usuario--->
-                    <label class="titulos" for="username">Usuario</label>
-                    <input type="text" placeholder="Ingresa el Usuario">
+                    <label class="titulos" for="email">Correo</label>
+                    <input type="text" name="correo" placeholder="Ingresa el Correo">
                     <!---Contraseña--->
-                    <label class="titulos" for="password">Contraseña</label>
-                    <input type="password" placeholder="Ingresa la contraseña">
+                    <label class="titulos" for="contra">Contraseña</label>
+                    <input type="password" name="password" placeholder="Ingresa la contraseña">
         
                     <input type="submit" value="Iniciar">
                     <a class="link-a" href="#">¿Olvidaste tu contraseña?</a><br>
                     <a class="link-a" href="#">¿No te has registrado aun?</a>
+                    
+                    <%
+                            String email,password;
+                            password = request.getParameter("password");
+                            email = request.getParameter("correo");
+                            System.out.println(email + password);
+
+                            User e = new User();
+                            e.setEmail_mu(email);
+                            e.setPass_mu(password);
+
+                            int status = UserActions.Loguear(e);
+
+                            if (status > 0) {
+                                int id = UserActions.getIdByEmail(email); 
+                                session.setAttribute("id",id);
+                                session.setAttribute("email", email);
+                                response.sendRedirect("main.jsp");
+                            }else{
+                                out.println("<h1>Es probable que no este registrado</h1>");
+                            }
+                    %>
+                    
                 </form>
+                
             </label>
         </section>
         <footer class="pie_de_pagina" id="pie_de_pagina">

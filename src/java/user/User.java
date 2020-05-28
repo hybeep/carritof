@@ -1,12 +1,15 @@
 package user;
 
+import java.sql.Date;
+
 
 
 
 public class User {
     
     
-    private String nom_mu, appat_mu, apmat_mu, birth_mu, tel_mu, cel_mu, email_mu, pass_mu;
+    private String nom_mu, appat_mu, apmat_mu, tel_mu, cel_mu, email_mu, pass_mu;
+    private Date birth_mu;
 
     public String getNom_mu() {
         return nom_mu;
@@ -32,13 +35,7 @@ public class User {
         this.apmat_mu = apmat_mu;
     }
 
-    public String getBirth_mu() {
-        return birth_mu;
-    }
-
-    public void setBirth_mu(String birth_mu) {
-        this.birth_mu = birth_mu;
-    }
+  
 
     public String getTel_mu() {
         return tel_mu;
@@ -71,7 +68,12 @@ public class User {
     public void setPass_mu(String pass_mu) {
         this.pass_mu = pass_mu;
     }
-    
-    
 
+    public Date getBirth_mu() {
+        return birth_mu;
+    }
+
+    public void setBirth_mu(Date birth_mu) {
+        this.birth_mu = birth_mu;
+    }
 }

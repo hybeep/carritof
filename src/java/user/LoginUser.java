@@ -65,20 +65,24 @@ public class LoginUser extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
             String email,password;
-            password = request.getParameter("contrasena");
+            password = request.getParameter("password");
             email = request.getParameter("correo");
-            
+            System.out.println(email + password);
+
             User e = new User();
             e.setEmail_mu(email);
             e.setPass_mu(password);
-            
+
             int status = UserActions.Loguear(e);
-            
-            if (status>0) {
-                HttpSession session = request.getSession();
+
+            if (status >0) {
+                int id = UserActions.getIdByEmail(email); 
+                HttpSession session = request.getSession(true);
+                session.setAttribute("id",id);
                 session.setAttribute("email", email);
+                response.sendRedirect("main.jsp");
             }else{
-                out.println("<h1>No se pudo realizar</h1>");
+                out.println("<h1>Es probable que no este registrado</h1>");
             }
             
         }

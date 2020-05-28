@@ -39,11 +39,11 @@
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type='number' name='correo' class='text' placeholder='Correo electronico'></td>
+                            <td><input type='text' name='correo' class='text' placeholder='Correo electronico'></td>
                         </tr>
                         <tr>
                             <td>Password:</td>
-                            <td><input type='number' name='contrasena' class='text' placeholder='Contraseña'></td>
+                            <td><input type='password' name='contrasena' class='text' placeholder='Contraseña'></td>
                         </tr>
                         <tr>
                             <td>Fecha de nacimiento:</td>
