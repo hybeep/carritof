@@ -1,8 +1,8 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Verdana;
 }
@@ -33,9 +33,9 @@ body{
 }
 .navegacion > ul > li > a{
     color: white;
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
 }
 .navegacion > ul > li > a:hover{
     background-color: white;
@@ -110,9 +110,9 @@ form{
     margin: 3%;
 }
 .log_in h1{
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 20px;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 20px;
 }
 .log_in .titulos{
     color: whitesmoke;
@@ -120,29 +120,30 @@ form{
     height: 10px;
 }
 .log_in input{
-    width: 100%;
-    margin-bottom: 15px;
+	width: 100%;
+	margin-bottom: 15px;
 }
 .log_in input[type="password"],
 .log_in input[type="text"],
 .log_in input[type="date"]{
     border-radius: 20px;
-    border-bottom: 2px white;
-    height: 20px;
-    font-size: 10px;
+	border-bottom: 2px white;
+	height: 20px;
+	color: white;
+	font-size: 10px;
 }
 .log_in input[type="submit"]{
-    outline: none;
-    border:none;
-    height: 20px;
-    background:rgb(172, 0, 172);
-    color: white;
-    font-size: 12px;
-    border-radius: 20px;
+	outline: none;
+	border:none;
+	height: 20px;
+	background:rgb(172, 0, 172);
+	color: white;
+	font-size: 12px;
+	border-radius: 20px;
 }
 .log_in input[type="submit"]:hover{
     background:white;
-    color: rgb(172, 0, 172);
+	color: rgb(172, 0, 172);
 }
 .log_in form .link-a{
     text-decoration: none;
@@ -153,10 +154,10 @@ form{
     color: rgb(172, 0, 172);
 }
 .log_in .logo{
-    width: 30%;
-    height: 30%;
-    border-radius: 50%;
+	width: 30%;
+	height: 30%;
+	border-radius: 50%;
     top: 0px;
     margin-top: -60%;
-    margin-left: calc(50% - 15%);
+	margin-left: calc(50% - 15%);
 }

@@ -22,7 +22,7 @@
                 <nav class="navegacion" id="navegacion">
                     <ul>
                         <li><a href="main.jsp">Pagina principal</a></li>
-                        <li><a href="billetera.jsp">TACOin</a></li>
+                        <li><a href="billetera.jsp">TACOins</a></li>
                         <li><a href="carrito.jsp">Mi Carrito</a></li>
                         <li><a href="profile.jsp">Mi perfil</a></li>
                         <form action="LogoutUser">
@@ -35,7 +35,7 @@
                         <ul>
                             <p>Perfil</p>
                             <li><a href="profile.jsp">Mi Perfil</a></li>
-                            <li><a href="direcciones.jsp">Direcciones Guardadas</a></li>
+                            <li><a href="direcciones.jsp">Mis Direcciones</a></li>
                             <li><a href="historial.jsp">Historial de Compras</a></li>
                         </ul>
                     </aside>
