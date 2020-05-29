@@ -16,29 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `edireccioncliente`
+-- Table structure for table `ccomplementos`
 --
 
-DROP TABLE IF EXISTS `edireccioncliente`;
+DROP TABLE IF EXISTS `ccomplementos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `edireccioncliente` (
-  `id_edc` int(11) NOT NULL AUTO_INCREMENT,
-  `id_mde` int(11) NOT NULL,
-  `id_mu` int(11) NOT NULL,
-  PRIMARY KEY (`id_edc`),
-  KEY `id_mde_fk` (`id_mde`),
-  CONSTRAINT `id_mde_fk` FOREIGN KEY (`id_mde`) REFERENCES `mdireccionentrega` (`id_mde`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `ccomplementos` (
+  `id_cc` int(11) NOT NULL AUTO_INCREMENT,
+  `acompanamientos` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_cc`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `edireccioncliente`
+-- Dumping data for table `ccomplementos`
 --
 
-LOCK TABLES `edireccioncliente` WRITE;
-/*!40000 ALTER TABLE `edireccioncliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `edireccioncliente` ENABLE KEYS */;
+LOCK TABLES `ccomplementos` WRITE;
+/*!40000 ALTER TABLE `ccomplementos` DISABLE KEYS */;
+INSERT INTO `ccomplementos` VALUES (1,'salsa'),(2,'limon'),(3,'cebolla'),(4,'cilantro'),(5,'piña'),(6,'con_todo');
+/*!40000 ALTER TABLE `ccomplementos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-28 20:02:46
+-- Dump completed on 2020-05-29 18:52:01

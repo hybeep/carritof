@@ -16,27 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ctortilla`
+-- Table structure for table `dtacos`
 --
 
-DROP TABLE IF EXISTS `ctortilla`;
+DROP TABLE IF EXISTS `dtacos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ctortilla` (
-  `id_ctortilla` int(11) NOT NULL,
-  `tipo_tortilla` char(1) DEFAULT NULL,
-  PRIMARY KEY (`id_ctortilla`)
+CREATE TABLE `dtacos` (
+  `id_taco` int(11) NOT NULL AUTO_INCREMENT,
+  `precio_taco` decimal(19,2) DEFAULT NULL,
+  `stock_taco` int(11) DEFAULT NULL,
+  `img_taco` blob,
+  `id_mtacos` int(11) DEFAULT NULL,
+  `id_cc` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_taco`),
+  KEY `id_mtacos_fk` (`id_mtacos`),
+  KEY `id_cc_fk` (`id_cc`),
+  CONSTRAINT `id_cc_fk` FOREIGN KEY (`id_cc`) REFERENCES `ccomplementos` (`id_cc`),
+  CONSTRAINT `id_mtacos_fk` FOREIGN KEY (`id_mtacos`) REFERENCES `mtacos` (`id_mtacos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ctortilla`
+-- Dumping data for table `dtacos`
 --
 
-LOCK TABLES `ctortilla` WRITE;
-/*!40000 ALTER TABLE `ctortilla` DISABLE KEYS */;
-INSERT INTO `ctortilla` VALUES (1,'M'),(2,'H');
-/*!40000 ALTER TABLE `ctortilla` ENABLE KEYS */;
+LOCK TABLES `dtacos` WRITE;
+/*!40000 ALTER TABLE `dtacos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dtacos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-28 20:02:44
+-- Dump completed on 2020-05-29 18:52:00

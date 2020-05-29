@@ -16,37 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dtacos`
+-- Table structure for table `mdireccionentrega`
 --
 
-DROP TABLE IF EXISTS `dtacos`;
+DROP TABLE IF EXISTS `mdireccionentrega`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `dtacos` (
-  `id_taco` int(11) NOT NULL AUTO_INCREMENT,
-  `precio_taco` decimal(19,2) DEFAULT NULL,
-  `stock_taco` int(11) DEFAULT NULL,
-  `img_taco` blob,
-  `id_ccarne` int(11) DEFAULT NULL,
-  `id_ctortilla` int(11) DEFAULT NULL,
-  `id_mtacos` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_taco`),
-  KEY `id_ccarne_fk` (`id_ccarne`),
-  KEY `id_ctortilla_fk` (`id_ctortilla`),
-  KEY `id_mtacos_fk` (`id_mtacos`),
-  CONSTRAINT `id_ccarne_fk` FOREIGN KEY (`id_ccarne`) REFERENCES `ccarnes` (`id_ccarne`),
-  CONSTRAINT `id_ctortilla_fk` FOREIGN KEY (`id_ctortilla`) REFERENCES `ctortilla` (`id_ctortilla`),
-  CONSTRAINT `id_mtacos_fk` FOREIGN KEY (`id_mtacos`) REFERENCES `mtacos` (`id_mtacos`)
+CREATE TABLE `mdireccionentrega` (
+  `id_mde` int(11) NOT NULL AUTO_INCREMENT,
+  `ciudad` varchar(30) NOT NULL,
+  `cp` int(11) NOT NULL,
+  `colonia` varchar(30) NOT NULL,
+  `no_int` int(11) DEFAULT NULL,
+  `no_ext` int(11) DEFAULT NULL,
+  `calle` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_mde`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dtacos`
+-- Dumping data for table `mdireccionentrega`
 --
 
-LOCK TABLES `dtacos` WRITE;
-/*!40000 ALTER TABLE `dtacos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dtacos` ENABLE KEYS */;
+LOCK TABLES `mdireccionentrega` WRITE;
+/*!40000 ALTER TABLE `mdireccionentrega` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mdireccionentrega` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-28 20:02:43
+-- Dump completed on 2020-05-29 18:52:05

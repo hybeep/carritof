@@ -16,31 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eclientecompra`
+-- Table structure for table `edireccioncliente`
 --
 
-DROP TABLE IF EXISTS `eclientecompra`;
+DROP TABLE IF EXISTS `edireccioncliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eclientecompra` (
-  `id_ecc` int(11) NOT NULL AUTO_INCREMENT,
-  `id_ect` int(11) DEFAULT NULL,
-  `id_mu` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_ecc`),
-  KEY `id_ect_fk` (`id_ect`),
-  KEY `id_mu_fk` (`id_mu`),
-  CONSTRAINT `id_ect_fk` FOREIGN KEY (`id_ect`) REFERENCES `ecompratacos` (`id_ect`),
-  CONSTRAINT `id_mu_fk` FOREIGN KEY (`id_mu`) REFERENCES `musuario` (`id_mu`)
+CREATE TABLE `edireccioncliente` (
+  `id_edc` int(11) NOT NULL AUTO_INCREMENT,
+  `id_mde` int(11) NOT NULL,
+  `id_mu` int(11) NOT NULL,
+  PRIMARY KEY (`id_edc`),
+  KEY `id_mde_fk` (`id_mde`),
+  CONSTRAINT `id_mde_fk` FOREIGN KEY (`id_mde`) REFERENCES `mdireccionentrega` (`id_mde`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eclientecompra`
+-- Dumping data for table `edireccioncliente`
 --
 
-LOCK TABLES `eclientecompra` WRITE;
-/*!40000 ALTER TABLE `eclientecompra` DISABLE KEYS */;
-/*!40000 ALTER TABLE `eclientecompra` ENABLE KEYS */;
+LOCK TABLES `edireccioncliente` WRITE;
+/*!40000 ALTER TABLE `edireccioncliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `edireccioncliente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-28 20:02:45
+-- Dump completed on 2020-05-29 18:52:04

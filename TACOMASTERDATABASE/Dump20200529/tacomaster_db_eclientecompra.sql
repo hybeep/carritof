@@ -16,32 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `mcarritotaco`
+-- Table structure for table `eclientecompra`
 --
 
-DROP TABLE IF EXISTS `mcarritotaco`;
+DROP TABLE IF EXISTS `eclientecompra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `mcarritotaco` (
-  `id_mct` int(11) NOT NULL AUTO_INCREMENT,
-  `cant_mct` int(11) DEFAULT NULL,
-  `subtotal_mct` decimal(19,2) DEFAULT NULL,
-  `total_mct` decimal(19,2) DEFAULT NULL,
-  `fecha` date DEFAULT NULL,
-  `id_ecc` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_mct`),
-  KEY `id_ecc_fk` (`id_ecc`),
-  CONSTRAINT `id_ecc_fk` FOREIGN KEY (`id_ecc`) REFERENCES `eclientecompra` (`id_ecc`)
+CREATE TABLE `eclientecompra` (
+  `id_ecc` int(11) NOT NULL AUTO_INCREMENT,
+  `id_ect` int(11) DEFAULT NULL,
+  `id_mu` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_ecc`),
+  KEY `id_ect_fk` (`id_ect`),
+  KEY `id_mu_fk` (`id_mu`),
+  CONSTRAINT `id_ect_fk` FOREIGN KEY (`id_ect`) REFERENCES `ecompratacos` (`id_ect`),
+  CONSTRAINT `id_mu_fk` FOREIGN KEY (`id_mu`) REFERENCES `musuario` (`id_mu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mcarritotaco`
+-- Dumping data for table `eclientecompra`
 --
 
-LOCK TABLES `mcarritotaco` WRITE;
-/*!40000 ALTER TABLE `mcarritotaco` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mcarritotaco` ENABLE KEYS */;
+LOCK TABLES `eclientecompra` WRITE;
+/*!40000 ALTER TABLE `eclientecompra` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eclientecompra` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-28 20:02:46
+-- Dump completed on 2020-05-29 18:52:03
