@@ -24,11 +24,12 @@ DROP TABLE IF EXISTS `dtacos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dtacos` (
   `id_taco` int(11) NOT NULL AUTO_INCREMENT,
-  `precio_taco` decimal(19,2) DEFAULT NULL,
-  `stock_taco` int(11) DEFAULT NULL,
+  `precio_taco` int(11) NOT NULL,
+  `stock_taco` int(11) NOT NULL,
   `img_taco` blob,
   `id_mtacos` int(11) DEFAULT NULL,
   `id_cc` int(11) DEFAULT NULL,
+  `descripcion` varchar(120) NOT NULL,
   PRIMARY KEY (`id_taco`),
   KEY `id_mtacos_fk` (`id_mtacos`),
   KEY `id_cc_fk` (`id_cc`),
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-29 18:52:00
+-- Dump completed on 2020-05-29 19:49:32
